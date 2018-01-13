@@ -19,8 +19,6 @@ class App extends Component {
       return personInput.id === id;
     });
 
-    // create a new object, because just copying 
-    // the new obj will point to the same pointer in memory
     const person = {
       ...this.state.persons[personIndex]
     }
@@ -37,9 +35,6 @@ class App extends Component {
   }
 
   deletePersonHandler = (personIndex) => {
-    // copy the full persons array using slice
-    // in a new one
-    // const personsArray = this.state.persons.slice();
     const personsArray = [...this.state.persons];
     personsArray.splice(personIndex, 1);
     // update the state with the new array
